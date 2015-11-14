@@ -38,12 +38,12 @@ $json_people = str_replace("\\n", " ", $json_people);
 		<th>Action</th>
 	</tr>
 </thead>
-  <tr ng-repeat="x in people">
-    <td>{{ x.first_name }}</td>    
-	<td>{{ x.last_name }}</td>
-	<td>{{ x.email }}</td>
-	<td><button ng-click="alertName(x.first_name,x.last_name,x.email)">Alert</button></td>
-  </tr>
+	<tr ng-repeat="x in people">
+		<td>{{ x.first_name }}</td>    
+		<td>{{ x.last_name }}</td>
+		<td>{{ x.email }}</td>
+		<td><button ng-click="alertName(x.first_name,x.last_name,x.email)">Alert</button></td>
+	</tr>
 </table>
 </div>
 
@@ -52,7 +52,7 @@ $json_people = str_replace("\\n", " ", $json_people);
 var people = JSON.parse( '<?php echo $json_people ?>' );
 
 angular.module('myApp', []).controller('peopleCtrl', function($scope) {
-$scope.people = people;
+	$scope.people = people;
 	$scope.alertName = function(first_name,last_name,email) {
 	var alertContent='Name: '+first_name+' '+last_name+', email: '+email;
     alert(alertContent);
